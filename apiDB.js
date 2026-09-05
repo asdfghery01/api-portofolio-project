@@ -5,11 +5,7 @@ const app = express();
 app.use(express.json());
 
 const pool = new Pool({
-    user: 'postgres',
-    host: 'Localhost',
-    database: 'pengeluaran_db',
-    password: 'H121194o',
-    port: 5432,
+    connectionString: process.env.DATABASE_URL,
 });
 
 const bcrypt = require('bcrypt');
